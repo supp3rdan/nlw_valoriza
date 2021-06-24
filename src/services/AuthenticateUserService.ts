@@ -2,16 +2,18 @@ import { getCustomRepository } from 'typeorm';
 
 import { compare } from "bcryptjs";
 
+import { sign } from "jsonwebtoken"
+
 import { UsersRepositories } from '../repositories/UserRepositories';
 
-interface AnthenticateRequest {
+interface IAuthenticateRequest {
     email: string;
     password: string;
 }
 
-class AnthenticateUserService {
+class AuthenticateUserService {
     
-    async execute({ email, password }: AnthenticateRequest) {
+    async execute({ email, password }: IAuthenticateRequest) {
         const usersRepositories = getCustomRepository(UsersRepositories);
         
         const user = await usersRepositories.findOne({
@@ -21,7 +23,21 @@ class AnthenticateUserService {
         if(!user){
             throw new Error("Email/Password incorrect")
         }
+
+        const passwordMatch = await compare(password, user.password);
+
+        if(!passwordMatch) {
+            throw new Error("Email/Password incorrect")
+        }
+
+        const token = sign({
+            email: user.email
+        }, "63041e27b99f519714f2c6f8ea45a653",{
+            subject: user.id,
+            expiresIn: "1d" 
+        })
+        return token;
     }
 }
 
-export { AnthenticateUserService }
+export { AuthenticateUserService }
