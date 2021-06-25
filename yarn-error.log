@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Danrley Carvalho\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @types/ bcryptjs -D
+  C:\Program Files\nodejs\node.exe C:\Users\Danrley Carvalho\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add class-transformer
 
 PATH: 
   C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\ProgramData\chocolatey\bin;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Program Files\Tesseract-OCR;C:\Users\Danrley Carvalho\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\Danrley Carvalho\AppData\Local\Programs\Python\Python38\;C:\Users\Danrley Carvalho\AppData\Local\Microsoft\WindowsApps;;C:\Users\Danrley Carvalho\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Danrley Carvalho\AppData\Roaming\npm
@@ -14,17 +14,8 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.npmjs.org/@types%2f: Request "https://registry.npmjs.org/@types%2f" returned a 405
-      at Request.params.callback [as _callback] (C:\Users\Danrley Carvalho\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66997:18)
-      at Request.self.callback (C:\Users\Danrley Carvalho\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
-      at Request.emit (events.js:315:20)
-      at Request.<anonymous> (C:\Users\Danrley Carvalho\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
-      at Request.emit (events.js:315:20)
-      at IncomingMessage.<anonymous> (C:\Users\Danrley Carvalho\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
-      at Object.onceWrapper (events.js:421:28)
-      at IncomingMessage.emit (events.js:327:22)
-      at endReadableNT (internal/streams/readable.js:1327:12)
-      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+  Error: getaddrinfo ENOTFOUND registry.npmjs.org
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)
 
 npm manifest: 
   {
@@ -37,6 +28,7 @@ npm manifest:
       "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
     },
     "devDependencies": {
+      "@types/bcryptjs": "^2.4.2",
       "@types/jsonwebtoken": "^8.5.2",
       "@types/uuid": "^8.3.0",
       "ts-node-dev": "^1.1.6",
@@ -67,6 +59,11 @@ Lockfile:
     version "1.2.3"
     resolved "https://registry.yarnpkg.com/@sqltools/formatter/-/formatter-1.2.3.tgz#1185726610acc37317ddab11c3c7f9066966bd20"
     integrity sha512-O3uyB/JbkAEMZaP3YqyHH7TMnex7tWyCbCI4EfJdOCoN6HIhqdJBWTM6aCCiWQ/5f5wxjgU735QAIpJbjDvmzg==
+  
+  "@types/bcryptjs@^2.4.2":
+    version "2.4.2"
+    resolved "https://registry.yarnpkg.com/@types/bcryptjs/-/bcryptjs-2.4.2.tgz#e3530eac9dd136bfdfb0e43df2c4c5ce1f77dfae"
+    integrity sha512-LiMQ6EOPob/4yUL66SZzu6Yh77cbzJFYll+ZfaPiPPFswtIlA/Fs1MzdKYA7JApHU49zQTbJGX3PDmCpIdDBRQ==
   
   "@types/body-parser@*":
     version "1.19.0"
